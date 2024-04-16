@@ -14,6 +14,7 @@ dist-ssr
 coverage
 *.local
 /src/views/apiKey.js
+/src/components/weatherApiKey.js
 
 /cypress/videos/
 /cypress/screenshots/
