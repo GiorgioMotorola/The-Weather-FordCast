@@ -1,19 +1,19 @@
 <template>
-  <main class="container text-white">
-    <div class="pt-4 mb-8 relative">
+  <main class="container text-white ">
+    <div class="pt-4 mb-8 relative mt-1">
       <input type="text" v-model="searchQuery" @input="getSearchResults" placeholder="Search for a city or state"
         class="py-2 px-1 w-full bg-transparent border-b focus:border-weather-secondary focus:outline-none focus:shadow-[0px_1px_0_0_#004E71]" />
-      <ul class="absolute bg-weather-secondary text-white w-full shadow-md py-2 px-1 top-[66px]"
+      <ul class="absolute bg-weather-secondary text-white w-full shadow-md py-2 px-1 top-[66px] border-white"
         v-if="mapboxSearchResults">
-        <p class="py-2" v-if="searchError">
+        <p class="py-2 bg-weather-secondary" v-if="searchError">
           Sorry, something went wrong, please try again.
         </p>
-        <p class="py-2" v-if="!searchError && mapboxSearchResults.length === 0">
+        <p class="py-2 bg-weather-secondary" v-if="!searchError && mapboxSearchResults.length === 0">
           No results match your query, try a different term.
         </p>
         <template v-else>
-          <li v-for="searchResult in mapboxSearchResults" :key="searchResult.id" class="py-2 cursor-pointer"
-            @click="previewCity(searchResult)">
+          <li v-for="searchResult in mapboxSearchResults" :key="searchResult.id"
+            class="py-2 cursor-pointer bg-weather-secondary " @click="previewCity(searchResult)">
             {{ searchResult.place_name }}
           </li>
         </template>
