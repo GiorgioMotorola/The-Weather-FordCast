@@ -59,7 +59,7 @@
                                     hourData.currentTime
                                 ).toLocaleTimeString("en-us", {
                                     hour: "numeric",
-                                })
+                            })
                             }}
                         </p>
                         <img class="w-auto h-[50px] object-cover" :src="`http://openweathermap.org/img/wn/${hourData.weather[0].icon}@2x.png`
@@ -86,7 +86,7 @@
                                 {
                                     weekday: "long",
                                 }
-                            )
+                        )
                         }}
                     </p>
                     <img class="w-[50px] h-[50px] object-cover" :src="`http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`
@@ -106,6 +106,7 @@
         </div>
     </div>
 </template>
+
 
 <script setup>
 import axios from "axios";
