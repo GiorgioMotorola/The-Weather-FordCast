@@ -9,11 +9,17 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView,
+      meta: {
+        title: 'Home',
+      },
     },
     {
       path: '/weather/:state/:city',
       name: 'cityView',
       component: CityView,
+      meta: {
+        title: 'Weather',
+      },
     },
   ],
 });

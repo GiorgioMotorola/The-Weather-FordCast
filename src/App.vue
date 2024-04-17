@@ -9,7 +9,11 @@
       </button>
     </div>
     <SiteNavigation />
-    <RouterView />
+    <RouterView class="flex-1" v-slot="{ Component }">
+      <Transition name="page" mode="out-in">
+        <component :is="Component" />
+      </Transition>
+    </RouterView>
   </div>
 </template>
 
@@ -48,4 +52,14 @@ const toggleMute = () => {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style>
+.page-enter-active,
+.page-leave-active {
+  transition: 600ms ease all;
+}
+
+.page-enter-from,
+.page-enter-to {
+  opacity: 0;
+}
+</style>
