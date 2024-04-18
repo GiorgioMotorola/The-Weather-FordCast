@@ -7,8 +7,13 @@
                 icon to start tracking this city.
             </p>
         </div>
+        <div class="flex items-center gap-2 py-2 text-white cursor-pointer duration-150 hover:text-red-500"
+            @click="removeCity">
+            <i class="fa-solid fa-trash"></i>
+            <p>Remove City</p>
+        </div>
         <!-- Weather Overview -->
-        <div class="flex flex-col items-center text-white py-12 ">
+        <div class="flex flex-col items-center text-white py-6 ">
             <h1 class="text-4xl mb-2">{{ route.params.city }}</h1>
             <p class="text-sm mb-12">
                 {{
@@ -98,12 +103,7 @@
                 </div>
             </div>
         </div>
-
-        <div class="flex items-center gap-2 py-12 text-white cursor-pointer duration-150 hover:text-red-500"
-            @click="removeCity">
-            <i class="fa-solid fa-trash"></i>
-            <p>Remove City</p>
-        </div>
+        <div class="mb-20"></div>
     </div>
 </template>
 

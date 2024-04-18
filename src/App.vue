@@ -2,14 +2,14 @@
   <div class="flex flex-col min-h-screen font-ibm-plex-mono bg-weather-primary uppercase">
     <!-- Your existing content -->
     <div class="flex justify-center">
-      <button
-        class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-1 px-2 my-4 sm:py-2 sm:px-4 border border-gray-400 rounded shadow flex items-center"
-        style="width: auto; max-width: 150px;" @click="toggleMute">
-        <font-awesome-icon :icon="['fas', isMuted ? 'volume-mute' : 'volume-up']" class="text-xl mr-2" />
-        {{ isMuted ? 'Unmute' : 'Mute' }}
-      </button>
+
     </div>
     <SiteNavigation />
+    <button class="text-white text-xl py-1 my-2 ml-auto mr-8 sm:mr-8 " style="width: auto; max-width: 150px;"
+      @click="toggleMute">
+      <i class="fa-solid fa-music"></i>
+      {{ isMuted ? 'Unmute' : 'Mute' }}
+    </button>
     <RouterView class="flex-1" v-slot="{ Component }">
       <Transition name="page" mode="out-in">
         <component :is="Component" />
@@ -20,11 +20,15 @@
         <li class="ticker">
           <span class="first">The Weather-Ford Cast: Your Number One destination for looking up the weather while
             listening to smooth jazz.........</span>
-          <span class="second">come down to larry hotdogs auto services for 10% brake pads. sale ends on 11/10/1995.
+          <span class="second">come down to larry hotdogs auto services for 10% off brake pads. sale ends on 11/10/1995.
             tel: 555-555-0085........ </span>
           <span class="third">this weekend, blockbuster nationwide is having a 5 movies for $5 sale. parents, get
             yourself movies for a weekend in and rent a nintendo 64 for the kids only $19.99 for the
             weekend............</span>
+          <span class="first">The clark county library is giving away free books this week and next week. all you need
+            is a library card and to promise to return it within a weeks time...........</span>
+          <span class="second">stay tuned for a live set from up and coming musician merzbow................ </span>
+          <span class="third">fishing is now illegal for anyone who is age 38...........</span>
         </li>
         <li class="ticker">
           <span class="first">music credits: </span>
@@ -59,8 +63,19 @@
         <li class="ticker">
           <!-- <span class="first">music credits: </span> -->
           <span class="second">artist: visiting jasmine </span>
-          <span class="third">song: "light funk background music" </span>
+          <span class="third">song: "light funk background music"............. </span>
         </li>
+        <span class="first">The Weather-Ford Cast: the smoothest way to start the day.........</span>
+        <span class="second">janice, please take me back i promise i am a changed guy........ </span>
+        <span class="third">the local parks and red department has finally updated its font to include the letter "c".
+          the days of using a "d" as a replacement is behind us. the change should go into effect on 12/22/1998
+          ............</span>
+        <span class="first">tonight on seinfeld: george and jerry switch names as a goof............</span>
+        <span class="second">author of book "infinite jest" david foster wallace stops by the studio to share his recipe
+          for homemade ham salad................ </span>
+        <span class="third">be sure to check the sky for the moon tonight. just to make sure its still
+          there...........
+          &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span>
       </ul>
     </div>
   </div>
@@ -111,7 +126,7 @@ h1 {
 }
 
 .stock-ticker {
-  font-size: 25px;
+  font-size: 35px;
   padding-block: 30px;
   border-top: 1px white solid;
   overflow: hidden;
@@ -122,6 +137,10 @@ h1 {
   gap: var(--gap);
   color: white;
   font-weight: 200;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
 
 .stock-ticker ul {
@@ -132,7 +151,7 @@ h1 {
   justify-content: space-between;
   align-items: center;
   gap: var(--gap);
-  animation: scroll 100s linear infinite;
+  animation: scroll 170s linear infinite;
 }
 
 .first,
@@ -152,6 +171,12 @@ ul {
 @keyframes scroll {
   to {
     transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .stock-ticker {
+    font-size: 18px;
   }
 }
 </style>
