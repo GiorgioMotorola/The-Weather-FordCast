@@ -13,8 +13,8 @@ dist
 dist-ssr
 coverage
 *.local
-/src/views/apiKey.js
-/src/components/weatherApiKey.js
+apiKey.js
+weatherApiKey.js
 
 /cypress/videos/
 /cypress/screenshots/

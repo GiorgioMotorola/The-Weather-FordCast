@@ -111,7 +111,7 @@
 <script setup>
 import axios from "axios";
 import { useRoute, useRouter } from "vue-router";
-import weatherApiKey from './weatherApiKey';
+import weatherApiKey from '../../weatherApiKey';
 
 const route = useRoute();
 const getWeatherData = async () => {
