@@ -78,6 +78,7 @@
           &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span>
       </ul>
     </div>
+    <div class="buffer-for-mobile"></div>
   </div>
 
 
@@ -161,6 +162,10 @@ li,
 ul {
   background-color: #405598;
 
+}
+
+.buffer-for-mobile {
+  margin-top: 10rem;
 }
 
 .stock-ticker:hover ul {
